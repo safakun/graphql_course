@@ -1,27 +1,18 @@
+import { readFileSync } from 'fs';
+import path from 'path';
+
+
+const userTypes = readFileSync(path.join(__dirname, "./typedefs/user.graphql"), {
+    encoding: 'utf-8',
+});
+
+const postTypes = readFileSync(path.join(__dirname, "./typedefs/post.graphql"), {
+    encoding: 'utf-8',
+});
+
 export const typeDefs = `
-type User {
-    id: String!
-    email: String!
-    username: String
-}
-
-input UserInput {
-    email: String!
-    username: String
-}
-
-type Query {
-    user(id: String!): User
-    users: [User]
-}
-
-type Mutation {
-    createUser(input: UserInput!): User
-    updateUser(input: UserInput!): User
-    deleteUser(id: String!): User
-}
-
-
+${userTypes}
+${postTypes}
 `;
 
 export const resolvers = {
