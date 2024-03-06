@@ -18,7 +18,19 @@ npm i @apollo/server @prisma/client cors dotenv express graphql
 npm i -D @types/cors @types/express @types/node nodemon prisma ts-node typescript
 ``` 
 
+- Run database 
+```bash
+sudo docker compose up
+```
+- run prisma
+```bash
+npx prisma studio 
+
+``` 
+http://localhost:5555 
+
 - Run server
 ```bash
 npm run dev
 ```
+
