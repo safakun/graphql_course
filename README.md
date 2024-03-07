@@ -27,6 +27,10 @@ sudo docker compose up
 npx prisma studio 
 
 ``` 
+- run prisma migrations
+```bash
+npx prisma migrate dev
+```
 http://localhost:5555 
 
 - Run server
