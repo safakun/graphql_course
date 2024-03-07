@@ -22,7 +22,7 @@ npm i -D @types/cors @types/express @types/node nodemon prisma ts-node typescrip
 ```bash
 sudo docker compose up
 ```
-- run prisma
+- run prisma studio
 ```bash
 npx prisma studio 
 

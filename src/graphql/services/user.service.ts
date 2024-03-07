@@ -10,6 +10,11 @@ interface GetUserArgs extends GetUsersArgs {
     id: string;
 }
 
+interface UserInput {
+    email: string
+    username?: string
+}
+
 const prisma = new PrismaClient();
 
 export const getUsers = async ({info}: GetUsersArgs) => {
@@ -31,4 +36,14 @@ export const getUser = async ({id, info}: GetUserArgs) => {
     }
     return await prisma.user.findUnique({where: {id}});
 
+}
+
+export const createUser = async ({email, username}: UserInput) => {
+console.log({email, username})
+    const createdUser = await prisma.user.create({ data: {
+        email,
+        username
+    }});
+
+    return createdUser;
 }
